@@ -14,16 +14,34 @@
         <p> Contact : kanekader12@gmail.com</p>
         <p> Mission 2026 : Devenir Developpeur web professionnel</p>
         <br><br>
-         <button onclick="changerNom()" style="background-color: #FF6B6B; color: white; padding: 30px; border: none; border-radius: 10px; font-size: 18px">
+         <button onclick="changerNom()" style="background-color: #FF6B6B; color: white; padding: 10px; border: none; border-radius: 5px; margin: 5px">
              Mode Dev Pro 2026
+         </button>
+         <button onclick="modeNormal()" style="background-color: #4ECDC4; color: white; padding: 10px; border: none; border-radius: 5px; margin: 5px">
+             Mode Normal
+         </button>
+        <button onclick="changerCouleur()" style="background-color: #45B7D1; color: white; padding: 10px; border: none; border-radius: 5px; margin: 5px">
+             Changer Couleur Site
          </button>
         <script>
          function direBonjour(){
              alert("SALAM KADER ! TON SITE BOUGE GRACE A JAVASCRIPT")
          }
          function changerNom(){
-             alert("OUI BOSS LE BOUTON MARCHE")
              document.getElementById("monTitre").innerHTML ="KANE KADER - DEV PRO 2026";
+             document.body.style.background="linear-gradient(135deg, #667eea 0%, #764ba2, 100%)";
+             document.body.style.color= "white";
+         }
+            function modeNormal(){
+             document.getElementById("monTitre").innerHTML ="KANE KADER";
+             document.body.style.background="white";
+             document.body.style.color= "black";
+         }
+            function changerCouleur(){
+                let couleur =["#FF6B6B", #4ECDC4, #45B7D1, #96CEB4, #FFEAA7"];
+                let couleurRandom =couleurs[Math.floor(Math.random() * couleurs.length)];
+             document.body.style.background= couleurRandom;
+             document.body.style.color= "white";
          }
      </script>
         <hr>
