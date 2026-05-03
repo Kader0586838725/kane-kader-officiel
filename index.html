@@ -45,6 +45,15 @@
              document.body.style.background= couleurRandom;
              document.body.style.color= "white";
          }
+            function toggleMode(){
+                document.body.classList.toggle("dark");
+                let btn= document.getElementById("btnMode");
+                if(document.body.classList.containt("dark")){
+                    btn.innerHTML = "Mode jour";
+                } else{
+                    btn.innerHTML = "Mode nuit"
+                }
+            }
      </script>
         <hr>
         <a href="reves.html">Voir mes objectifs 2026</a>
