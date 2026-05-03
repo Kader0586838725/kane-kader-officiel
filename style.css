@@ -37,3 +37,16 @@ img[src="kader.jpg"]{
     border: 5px solid #ff6600;
     margin: 20px;
 }
+bdy.dark {
+    background: #1a1a1a !important;
+    color: white !important;
+}
+body.dark button {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+#btnMode {
+    background: #222;
+    color: white;
+}
