@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="style.css">
         <title>Carte de Visite - KANE KADER</title>
     </head>
+    <style>
+        @Keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        button:hover {
+            tranform: scale(1.05);
+            transform: 0.3s
+        }
+    </style>
     <body>
         <h1 id="monTitre">KANE KADER</h1>
         <img src="kader.jpg" width="200" alt="photo de kader">
