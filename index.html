@@ -95,15 +95,15 @@
                 visites++;
                 document.getElementById('compteur').innerText =visites;
             }, 3000);
-            let score= 0;
+            let scoreDubai = 0;
 
-            function bonneReponse(){
-                score = score + 1;
-                document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + score + "/1  <br> MISSION DUBAI EN COURS...";
-                    document.getElementById(resultatQuizDubai').style.color= "lime";
+            function bonneReponseDubai(){
+                scoreDubai = scoreDubai + 1;
+                document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + scoreDubai + "/1  <br> MISSION DUBAI EN COURS...";
+                    document.getElementById('resultatQuizDubai').style.color= "lime";
             }
-            function mauvaiseReponse(){
-                document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + score + "/1";
+            function mauvaiseReponseDubai(){
+                document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + scoreDubai + "/1";
                 document.getElementById('resultatQuizDubai').style.color = "red";
             }
      </script>
