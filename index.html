@@ -20,24 +20,28 @@
         }
     </style>
     <body>
-    <div style="text-align: center;margin: 40px padding: 20px; border:3px dashed gold; border-radius: 20px;">
-    <h2 style="color:gold;"> QUIZ MISSION 2026 </h2>
-    <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
-       <button onclick="bonne Reponse()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
-         <button onclick="bonne Reponse()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button>  
-          <h3 id="resultatQuiz" style="margin-top:20px; color: white;> </h3>
-     <audio id="maMusique" loop>
-                  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-     </audio>
-         <button onclick="document.getElementById('maMusique').play()" style="background: linear-gradient(45deg, gold, orange); color: black; padding: 15px 30px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold;"> Lancer la Musique Dubai 2026 </button> 
-    <button onclick="document.getElementById('maMusique').pause()" style="background:  linear-gradient(45deg, red, blue); color:white; padding: 12px 25px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold; margin:5px">Stop </button>
-         </div>
+    
         <h1 id="monTitre" class="fade-in">KANE KADER</h1>
         <img src="kader.jpg" width="200" alt="photo de kader" class="fade-in">
         <h2>Apprenti Developpeur Web</h2>
         <p>Je cree mon premier site en HTML depuis BOUAKE</p>
         <p> Contact : kanekader12@gmail.com</p>
         <p> Mission 2026 : Devenir Developpeur web professionnel</p>
+        <div style="text-align: center;margin: 25px;">
+            <audio id="maMusique" loop>
+                  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          </audio>
+         <button onclick="document.getElementById('maMusique').play()" style="background: linear-gradient(45deg, gold, orange); color: black; padding: 15px 30px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold;"> Lancer la Musique Dubai 2026 </button> 
+         <button onclick="document.getElementById('maMusique').pause()" style="background:  linear-gradient(45deg, red); color:white; padding: 12px 25px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold; margin:5px">Stop </button>
+             </div>
+       <div style="text-align:center; margin:40px; padding:20px; border:3px dashed gold; border-radius:20px;">  
+    <h2 style="color:gold;"> QUIZ MISSION 2026 </h2>
+    <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
+       <button onclick="bonneReponse()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
+        
+         <button onclick="mauvaiseReponse()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button>  
+          <h3 id="resultatQuiz" style="margin-top:20px; color: white;> </h3>
+    </div>
         <br><br>
                  <div id="menuSticky">
          <button onclick="changerNom()" style="background-color: #FF6B6B; color: white; padding: 10px; border: none; border-radius: 5px; margin: 5px">
@@ -95,11 +99,11 @@
 
             function bonneReponse(){
                 score = score + 1;
-                document.getElementById('resultatQuiz').innerHTML = CORRECT BOSS ! Score: " + score "/1  <br> MISSION DUBAI EN COURS...";
-                    docment.getElementById(resultetQuiz').style.color= "lime";
+                document.getElementById('resultatQuiz').innerHTML = "CORRECT BOSS ! Score: " + score + "/1  <br> MISSION DUBAI EN COURS...";
+                    document.getElementById(resultatQuiz').style.color= "lime";
             }
             function mauvaiseReponse(){
-                document.getElementById('resultatQuiz').innerHTML = " FAUX BOSS ! Réessaie. Score": score +"/1";
+                document.getElementById('resultatQuiz').innerHTML = " FAUX BOSS ! Réessaie. Score:" + score + "/1";
                 document.getElementById('resultatQuiz').style.color = "red";
             }
      </script>
