@@ -40,7 +40,7 @@
        <button onclick="bonneReponse()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
         
          <button onclick="mauvaiseReponse()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button>  
-          <h3 id="resultatQuiz" style="margin-top:20px; color: white;> </h3>
+          <h3 id="resultatQuizDubai" style="margin-top:20px; color: white;> </h3>
     </div>
         <br><br>
                  <div id="menuSticky">
@@ -99,12 +99,12 @@
 
             function bonneReponse(){
                 score = score + 1;
-                document.getElementById('resultatQuiz').innerHTML = "CORRECT BOSS ! Score: " + score + "/1  <br> MISSION DUBAI EN COURS...";
-                    document.getElementById(resultatQuiz').style.color= "lime";
+                document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + score + "/1  <br> MISSION DUBAI EN COURS...";
+                    document.getElementById(resultatQuizDubai').style.color= "lime";
             }
             function mauvaiseReponse(){
-                document.getElementById('resultatQuiz').innerHTML = " FAUX BOSS ! Réessaie. Score:" + score + "/1";
-                document.getElementById('resultatQuiz').style.color = "red";
+                document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + score + "/1";
+                document.getElementById('resultatQuizDubai').style.color = "red";
             }
      </script>
           <p style="margin-top: 40px; font-weight: bold; font-size: 20px;">
