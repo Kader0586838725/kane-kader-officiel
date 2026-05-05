@@ -20,7 +20,12 @@
         }
     </style>
     <body>
-    <div style="text-align: center;margin: 20px">
+    <div style="text-align: center;margin: 40px padding: 20px; border:3px dashed gold; border-radius: 20px;">
+    <h2 style="color:gold;"> QUIZ MISSION 2026 </h2>
+    <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
+       <button onclick="bonne Reponse()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
+         <button onclick="bonne Reponse()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button>  
+          <h3 id="resultatQuiz" style="margin-top:20px; color: white;> </h3>
      <audio id="maMusique" loop>
                   <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
      </audio>
@@ -86,6 +91,17 @@
                 visites++;
                 document.getElementById('compteur').innerText =visites;
             }, 3000);
+            let score= 0;
+
+            function bonneReponse(){
+                score = score + 1;
+                document.getElementById('resultatQuiz').innerHTML = CORRECT BOSS ! Score: " + score "/1  <br> MISSION DUBAI EN COURS...";
+                    docment.getElementById(resultetQuiz').style.color= "lime";
+            }
+            function mauvaiseReponse(){
+                document.getElementById('resultatQuiz').innerHTML = " FAUX BOSS ! Réessaie. Score": score +"/1";
+                document.getElementById('resultatQuiz').style.color = "red";
+            }
      </script>
           <p style="margin-top: 40px; font-weight: bold; font-size: 20px;">
             Visites: <span id="compteur">2026</span>
