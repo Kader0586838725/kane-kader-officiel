@@ -39,7 +39,7 @@
     <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
        <button id="btnA" onclick="bonneReponseDubai()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
          <button id="btnB" onclick="mauvaiseReponseDubai()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button> 
-        <button id="btnResetQuizDubai" onclick="resetQuizDubai()" style="background:orange; color: black; padding:10px 20px; margin:10px; border-radius:10px; border:none; cursor:pointer; display:none;" id="btnResetDubai"> Recommencer le Quiz
+        <button id="btnResetDubai" onclick="resetQuizDubai()" style="background:orange; color: black; padding:10px 20px; margin:10px; border-radius:10px; border:none; cursor:pointer; display:none;" id="btnResetDubai"> Recommencer le Quiz
         </button> 
           <h3 id="resultatQuizDubai" style="margin-top:20px; color: white;> </h3>
     </div>
@@ -102,14 +102,14 @@
                 scoreDubai = scoreDubai + 1;
                 document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + scoreDubai + "/1  <br> MISSION DUBAI EN COURS...";
                 document.getElementById('resultatQuizDubai').style.color= "lime";
-                document.getElementById('resultatQuizDubai').style.display = "inline-block";
+                document.getElementById('btnResetDubai').style.display = "inline-block";
                 document.getElementById('btnA').disabled = true;
                 document.getElementById('btnB').disabled = true;
             }
             function mauvaiseReponseDubai(){
                 document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + scoreDubai + "/1";
                 document.getElementById('resultatQuizDubai').style.color = "red";
-                 document.getElementById('resultatQuizDubai').style.display = "inline-block";
+                 document.getElementById('btnResetDubai').style.display = "inline-block";
                 document.getElementById('btnA').disabled = true;
                 document.getElementById('btnB').disabled = true;
             }
