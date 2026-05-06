@@ -39,7 +39,9 @@
     <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
        <button onclick="bonneReponseDubai()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
         
-         <button onclick="mauvaiseReponseDubai()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button>  
+         <button onclick="mauvaiseReponseDubai()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button> 
+        <button onclick="resetQuizDubai()" style="background:orange; color: black; padding:10px 20px; margin:10px; border-radius:10px; border:none; cursor:pointer; display:none;" id="btnResetDubai"> Recommencer le Quiz
+        </button> 
           <h3 id="resultatQuizDubai" style="margin-top:20px; color: white;> </h3>
     </div>
         <br><br>
@@ -100,11 +102,24 @@
             function bonneReponseDubai(){
                 scoreDubai = scoreDubai + 1;
                 document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + scoreDubai + "/1  <br> MISSION DUBAI EN COURS...";
-                    document.getElementById('resultatQuizDubai').style.color= "lime";
+                document.getElementById('resultatQuizDubai').style.color= "lime";
+                document.getElementById('resultatQuizDubai').style.display = "inline-block";
+                document.getElementById('btnA').disabled = true;
+                document.getElementById('btnB').disabled = true;
             }
             function mauvaiseReponseDubai(){
                 document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + scoreDubai + "/1";
                 document.getElementById('resultatQuizDubai').style.color = "red";
+                 document.getElementById('resultatQuizDubai').style.display = "inline-block";
+                document.getElementById('btnA').disabled = true;
+                document.getElementById('btnB').disabled = true;
+            }
+            function resetQuizDubai(){
+                scoreDubai = 0
+                document.getElemntById('resultatQuizDubai').inner.HTML = "";
+                document.getElementById('btnResetDubai').style.display = "none";
+                document.getElementById('btnA').disabled = false;
+                document.getElementById('btnB').disabled = false;
             }
      </script>
           <p style="margin-top: 40px; font-weight: bold; font-size: 20px;">
