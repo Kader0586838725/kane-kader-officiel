@@ -39,18 +39,18 @@
             <button id="btnA1" onclick="checkReponse(1,'A')" style="background:green; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. HTML </button>
             <button id="btnB1" onclick="checkReponse(1,'B')" style="background:#333; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">B. Photoshop </button>
            
-            <h2 id="q2" style="display:none;">Question 2/3 :Quelle ville est la capitale des Émirats ? </h2>
+            <h2 id="q2" style="display:none;">Question 2/3 : Quelle ville est la capitale des Émirats ? </h2>
             <button id="btnA2" onclick="checkReponse(2,'A')" style="background:#333; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. Dubai </button>
-            <button id="btnB2" onclick="checkReponse(2,'B')" style="background:green; color:white; padding:10px 20px; margin:5px; bordr-radius:10px; border:none; cursor:pointer; display:none;">B. Abu Dhabi</button>
+            <button id="btnB2" onclick="checkReponse(2,'B')" style="background:green; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">B. Abu Dhabi</button>
 
-           <h2 id="q3" style="display:none; ">Question 3/3 : Quel est le plus haut bulding du monde ?</h2>
+           <h2 id="q3" style="display:none; ">Question 3/3 : Quel est le plus haut building du monde ?</h2>
             <button id="btnA3" onclick="checkReponse(3,'A')" style="background:green; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. Burj Khalifa</button>
             <button id="btnB3" onclick="checkReponse(3,'B')" style="background:#333; color:white; padding:10px 20px; margin:5px; bordr-radius:10px; border:none; cursor:pointer; display:none;">B. Tour Eiffel </button>
            
-             <button id="btnResetQuizDubai" onclick="resetQuizDubai()" style="background :orange; color:black; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;" >Recommencer le Quiz  </button>
+             <button id="btnResetQuizDubai" onclick="resetQuizDubai()" style="background:orange; color:black; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;" >Recommencer le Quiz  </button>
 
           <h3 id="resultatQuizDubai" style="margin-top:20px; color: white;> </h3>
-                <div id="billetDubaï" style="display:none; marging-top:20px" > </div>
+                <div id="billetDubaï" style="display:none; marging-top:20px;" > </div>
         <br><br>
                  <div id="menuSticky">
          <button onclick="changerNom()" style="background-color: #FF6B6B; color: white; padding: 10px; border: none; border-radius: 5px; margin: 5px">
@@ -95,7 +95,7 @@
                 let btn= document.getElementById("btnMode");
                 if(document.body.classList.contains("dark")){
                     btn.innerHTML = "Mode jour";
-                } else{
+                } else {
                     btn.innerHTML = "Mode nuit";
                 }
             }
@@ -119,13 +119,13 @@
                     document.getElementById('resultatQuizDubai').style.color = "red";
                 }
                 if(numQuestion < 3){
-                    questionActuelle =quetionActuelle + 1;
+                    questionActuelle = questionActuelle + 1;
                     setTimeout(function(){
                      document.getElelmentById'q' + questionActuelle).style.display = "block";
                      document.getElementById('btnA' + questionActuelle).style.display = "inline-block";
                      document.getElementById('btnB' + questionActuelle).style.display =inline-block";
                      document.getElementById('resultatQuizDubai').innerHTML = "Score:" + scoreDubai + "/3;
-                    document.getElementById('resultatQuizDubai')).style.color ="white";
+                    document.getElementById('resultatQuizDubai').style.color ="white";
                     }, 1500);
             } else {
                 setTimeout(function(){
@@ -135,9 +135,9 @@
                         document.getElementById('billetDubai').innerHTML = "TON BILLET POUR DUBAÏ <br><br> Félicitation Kader  <br>Vol Abidjan --> Dubaï confirmé";
                         document.getElementById('billetDubai').style.cssText ="display:block;background :gold; color:black; padding 20px; border-radius:15px; text-align:center; font-size:20px; font-weight:bold;"
                     } else {
-                        document.getElementById('resultatQuizDubai').innerHTML = "score final:" + scoreDai + "3/.tu peut faire mieux";
+                        document.getElementById('resultatQuizDubai').innerHTML = "score final:" + scoreDubai + "3/.tu peut faire mieux";
                     }
-                    document.getElementById('btnResetDubai').style.display = "inline block";
+                    document.getElementById('btnResetQuizDubai').style.display = "inline-block";
                 }, 1500);
             }
             }
@@ -151,7 +151,7 @@
                 document.getElementById('btnA3').style.display = "none";
                 document.getElementById('btnB3').style.display = "none";
                 document.getElementById('billetDubai').style.display = "none";
-                document.getElementById('btnResetDubai').style.display = "none";
+                document.getElementById('btnResetQuizDubai').style.display = "none";
                 document.getElementById('resultatQuizDubai').innerHTML = "";
 
                 document.getElementById('btnA1').disabled = false;
