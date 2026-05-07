@@ -34,14 +34,23 @@
          <button onclick="document.getElementById('maMusique').play()" style="background: linear-gradient(45deg, gold, orange); color: black; padding: 15px 30px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold;"> Lancer la Musique Dubai 2026 </button> 
          <button onclick="document.getElementById('maMusique').pause()" style="background:  linear-gradient(45deg, red); color:white; padding: 12px 25px; border-radius:25;font-size:18; borer:none; cursor:pointer; font-weight:bold; margin:5px">Stop </button>
              </div>
-       <div style="text-align:center; margin:40px; padding:20px; border:3px dashed gold; border-radius:20px;">  
-    <h2 style="color:gold;"> QUIZ MISSION 2026 </h2>
-    <p><strong>Questions 1:<</strong> Quel langage crée la structure d'un Site ? <p>
-       <button id="btnA" onclick="bonneReponseDubai()" style="background:green; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >A.HTML </button>  
-         <button id="btnB" onclick="mauvaiseReponseDubai()" style="background:#333; color:white; padding:5px; border-radius:10px; border:none;cursor:pointer;" >B.photoshop </button> 
-        <button id="btnResetDubai" onclick="resetQuizDubai()" style="background:orange; color: black; padding:10px 20px; margin:10px; border-radius:10px; border:none; cursor:pointer; display:none;" id="btnResetDubai"> Recommencer le Quiz
-        </button> 
+       <div style="text-align:center; margin:40px; padding:20px; border:3px dashed gold; border-radius:20px;">
+           <h2>Question 1/3 : Quel langage crée  la structure d'un site web ?  </h2>
+            <button id="btnA1" onclick="checkReponse(1,'A')" style="background:green; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. HTML </button>
+            <button id="btnB1" onclick="checkReponse(1,'B')" style="background:#333; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">B. Photoshop </button>
+           
+            <h2 id="q2" style="display:none;">Question 2/3 :Quelle ville est la capitale des Émirats ? </h2>
+            <button id="btnA2" onclick="checkReponse(2,'A')" style="background:#333; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. Dubai </button>
+            <button id="btnA2" onclick="checkReponse(2,'B')" style="background:green; color:white; padding:10px 20px; margin:5px; bordr-radius:10px; border:none; cursor:pointer; display:none;">B. Abu Dhabi</button>
+
+           <h2 id="q3" style="display:none; ">Question 3/3 : Quelle est le plus haut bulding du monde ?</h2>
+            <button id="btnA3" onclick="checkReponse(3,'A')" style="background:green; color:white; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;">A. Burj Khalifa</button>
+            <button id="btnB3" onclick="checkReponse(3,'B')" style="background:#333; color:white; padding:10px 20px; margin:5px; bordr-radius:10px; border:none; cursor:pointer; display:none;">B. Tour Eiffel </button>
+           
+             <button id="btnResetQuizDubai" onclick="resetQuizDubai()" style="background :orange; color:black; padding:10px 20px; margin:5px; border-radius:10px; border:none; cursor:pointer; display:none;" >Recommencer le Quiz  </button>
+
           <h3 id="resultatQuizDubai" style="margin-top:20px; color: white;> </h3>
+                <div id="billetDubaï" style="display:none; marging-top:20px" > </div>
     </div>
         <br><br>
                  <div id="menuSticky">
@@ -68,7 +77,7 @@
          }
          function changerNom(){
              document.getElementById("monTitre").innerHTML ="KANE KADER - DEV PRO 2026";
-             document.body.style.background="linear-gradient(135deg, #667eea 0%, #764ba2, 100%)";
+             document.body.style.background="linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
              document.body.style.color= "white";
          }
             function modeNormal(){
@@ -97,29 +106,59 @@
                 document.getElementById('compteur').innerText =visites;
             }, 3000);
             let scoreDubai = 0;
-
-            function bonneReponseDubai(){
-                scoreDubai = scoreDubai + 1;
-                document.getElementById('resultatQuizDubai').innerHTML = "CORRECT BOSS ! Score: " + scoreDubai + "/1  <br> MISSION DUBAI EN COURS...";
-                document.getElementById('resultatQuizDubai').style.color= "lime";
-                document.getElementById('btnResetDubai').style.display = "inline-block";
-                document.getElementById('btnA').disabled = true;
-                document.getElementById('btnB').disabled = true;
+            let questionActuelle = 1;
+            function checkReponse(numQuestion, choix){
+                
+                document.getElementById('btnA' + numQuestion).disabled = true;
+                document.getElementById('btnB' + numQuestion).disabled = true;
+                if(numQuestion == 1 && choix == 'A' || numQuestion == 2 &&  choix == 'B' || numQuestion == 3 && choix == 'A'{
+                  scoreDubai = scoreDubai +1;
+                  document.getElementById('resultatQuizDubai').innerHTML = "CORRECT" !score: " + scoreDubai + "/3";
+                  document.getElementById('resultatQuizDubai').style.color ="lime";
+                } else {
+                    document.getElementById('resultatQuizDubai').innerHTML = " FAUX !score:" +scoreDubai + "/3";
+                    document.getElementById('resultatQuizDubai').style.color = "red";
+                }
+                if(numQuestion < 3){
+                    questionActuelle =quetionActuelle + 1;
+                    setTimeout(function(){
+                     document.getElelmentById'q' + questionActuelle).style.display = "block";
+                     document.getElementById('btnA' + questionActuelle).style.display = "inline-block";
+                     document.getElementById('btnB' + questionActuelle).style.display =inline-block";
+                     document.getElementById('resultatQuizDubai').innerHTML = "Score:" + scoreDubai + "/3;
+                    document.getElementById('resultatQuizDubai')).style.color ="white";
+                    }, 1500);
+            } else {
+                setTimeout(function(){
+                    if(scoreDubai == 3){
+                        document.getElementById('resultatQuizDubai').innerHTML = "PARFAIT !3/3 !MISSION DUBAÏ 2026 VALIDÉ !";
+                        document.getElementById('billetDUbai').style.display = "block";
+                        document.getElementById('billetDubai').innerHTML = "TON BILLET POUR DUBAÏ <br><br> Félicitation Kader  <br>Vol Abidjan --> Dubaï confirmé";
+                        document.getElementById('billetDubai').style.cssText ="display:block;background :gold; color:black; padding 20px; border-radius:15px; text-align:center; font-size:20px; font-weight:bold;"
+                    } else {
+                        document.getElementById('resultatQuizDubai').innerHTML = "score final:" + scoreDai + "3/.tu peut faire mieux";
+                    }
+                    document.getElementById('btnResetDubai').style.display = "inline block";
+                }, 1500);
             }
-            function mauvaiseReponseDubai(){
-                document.getElementById('resultatQuizDubai').innerHTML = " FAUX BOSS ! Réessaie. Score:" + scoreDubai + "/1";
-                document.getElementById('resultatQuizDubai').style.color = "red";
-                 document.getElementById('btnResetDubai').style.display = "inline-block";
-                document.getElementById('btnA').disabled = true;
-                document.getElementById('btnB').disabled = true;
             }
             function resetQuizDubai(){
-                scoreDubai = 0
-                document.getElementById('resultatQuizDubai').innerHTML = "";
+                scoreDubai = 0;
+                questionActuelle = 1;
+                document.getElementById('q2').style.display = "none";
+                document.getElementById('btnA2').style.display = "none";
+                document.getElementById('btnB2').style.display = "none";
+                document.getElementById('q3').style.display = "none";
+                document.getElementById('btnA3').style.display = "none";
+                document.getElementById('btnB3').style.display = "none";
+                document.getElementById('billetDubai').style.display = "none";
                 document.getElementById('btnResetDubai').style.display = "none";
-                document.getElementById('btnA').disabled = false;
-                document.getElementById('btnB').disabled = false;
+                document.getElementById('resultatQuizDubai').innerHTML = "";
+
+                document.getElementById('btnA1').disabled = false;
+                 document.getElementById('btnB1').disabled = false;
             }
+            
      </script>
           <p style="margin-top: 40px; font-weight: bold; font-size: 20px;">
             Visites: <span id="compteur">2026</span>
