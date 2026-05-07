@@ -109,30 +109,30 @@
                 
                 document.getElementById('btnA' + numQuestion).disabled = true;
                 document.getElementById('btnB' + numQuestion).disabled = true;
-                if(numQuestion == 1 && choix == 'A' || numQuestion == 2 &&  choix == 'B' || numQuestion == 3 && choix == 'A'){
+                
+                if(numQuestion == 1 && choix == 'A') || (numQuestion == 2 &&  choix == 'B') || (numQuestion == 3 && choix == 'A'){
                   scoreDubai = scoreDubai + 1;
                   document.getElementById('resultatQuizDubai').innerHTML = "CORRECT ! score: " + scoreDubai + "/3";
                   document.getElementById('resultatQuizDubai').style.color ="lime";
                 } else {
-                    document.getElementById('resultatQuizDubai').innerHTML = " FAUX !score:" +scoreDubai + "/3";
+                    document.getElementById('resultatQuizDubai').innerHTML = " FAUX ! score:" + scoreDubai + "/3";
                     document.getElementById('resultatQuizDubai').style.color = "red";
                 }
+                
                 if(numQuestion < 3){
                     questionActuelle = questionActuelle + 1;
                     setTimeout(function(){
                      document.getElelmentById'q' + questionActuelle).style.display = "block";
                      document.getElementById('btnA' + questionActuelle).style.display = "inline-block";
-                     document.getElementById('btnB' + questionActuelle).style.display ="inline-block";
-                     document.getElementById('resultatQuizDubai').innerHTML = "Score:" + scoreDubai + "/3;
-                    document.getElementById('resultatQuizDubai').style.color ="white";
+                     document.getElementById('btnB' + questionActuelle).style.display = "inline-block";
                     }, 1500);
             } else {
                 setTimeout(function(){
                     if(scoreDubai == 3){
-                        document.getElementById('resultatQuizDubai').innerHTML = "PARFAIT !3/3 ! MISSION DUBAÏ 2026 VALIDÉ !";
+                        document.getElementById('resultatQuizDubai').innerHTML = "PARFAIT ! 3/3 ! MISSION DUBAÏ 2026 VALIDÉ !";
                         document.getElementById('billetDUbai').style.display = "block";
                         document.getElementById('billetDubai').innerHTML = "TON BILLET POUR DUBAÏ <br><br> Félicitation Kader  <br>Vol Abidjan --> Dubaï confirmé";
-                        document.getElementById('billetDubai').style.cssText ="display:block;background :gold; color:black; padding 20px; border-radius:15px; text-align:center; font-size:20px; font-weight:bold;"
+                        document.getElementById('billetDubai').style.cssText ="display:block; background:gold; color:black; padding:20px; border-radius:15px; text-align:center; font-size:20px; font-weight:bold;"
                     } else {
                         document.getElementById('resultatQuizDubai').innerHTML = "score final:" + scoreDubai + "/3.tu peut faire mieux";
                     }
