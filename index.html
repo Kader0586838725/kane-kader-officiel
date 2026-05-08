@@ -110,7 +110,7 @@
                 document.getElementById('btnA' + numQuestion).disabled = true;
                 document.getElementById('btnB' + numQuestion).disabled = true;
                 
-                if(numQuestion == 1 && choix == 'A') || (numQuestion == 2 &&  choix == 'B') || (numQuestion == 3 && choix == 'A'){
+                if((numQuestion == 1 && choix == 'A') || (numQuestion == 2 && choix == 'B') || (numQuestion == 3 && choix == 'A')){
                   scoreDubai = scoreDubai + 1;
                   document.getElementById('resultatQuizDubai').innerHTML = "CORRECT ! score: " + scoreDubai + "/3";
                   document.getElementById('resultatQuizDubai').style.color ="lime";
@@ -122,7 +122,7 @@
                 if(numQuestion < 3){
                     questionActuelle = questionActuelle + 1;
                     setTimeout(function(){
-                     document.getElelmentById'q' + questionActuelle).style.display = "block";
+                     document.getElelmentById('q' + questionActuelle).style.display = "block";
                      document.getElementById('btnA' + questionActuelle).style.display = "inline-block";
                      document.getElementById('btnB' + questionActuelle).style.display = "inline-block";
                     }, 1500);
