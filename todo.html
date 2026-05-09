@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+  <html>
+  <head> 
+  <meta charset="UTF-8">
+   <style>
+     body{
+       font-family: Arial;
+       background: #f172ac;
+       color: white;
+       text-align: center;
+       padding:20px;
+     }
+     h1{ color:#22c55e; }
+   .container{
+     background: #1e293b;
+     max-width: 500px;
+     padding:30px;
+     border-radius: 15px;
+     border: 2px solid #22c55e;
+     }
+     input{
+       padding: 12px;
+       width:70%;
+       border: none;
+       border-radius: 8px;
+       font-size: 16px;
+     }
+     button{
+       padding: 12px 20px;
+       background: #22c55e;
+       color: black;
+       border: none;
+       border-radius: 8px;
+       fontweight: bold;
+       cursor: pointer;
+       margin-left: 5px;
+     }
+     ul{
+       liststyle: none;
+       padding: 0;
+       margin-top: 20px;
+     }
+     li{
+       background: #334155;
+       padding: 15px;
+       margin: 10px;
+       border-radius: 8px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+     .delete{ background: #ef4444; color: white; }
+   </style>
+     <body>
+    <h1> To-Do List Dubaï 2026</h1>
+    <p>Objectif : Devenir Dev Pro avant 2026</p>
+
+    <div class="container">
+      <input type="text" id="tache" placeholder="Ex: Apprendre JavaScript">
+       <button onclick="ajouter tache()">Ajouter</button>
+
+       <ul id="liste"></ul>
+    </div>
+        
+    <script>
+      let tache = [];
+      window.onload = function(){
+        let tacheSauvegardees =localStorage.getItem('mesTaches');
+        if(tachesSauvegardees){
+          taches =JSON.parse(tachesSauvegardees);
+          afficherTaches();
+        }
+      }
+      function ajouterTache(){
+        let input = document.getElementById('tache');
+        let textTache = input.value;
+
+        if(textTache === ''){
+          alert('Écris une tâche !');
+          return;
+        }
+        taches.push(textetache);
+        input.value ='';
+
+        sauvegarder();
+        afficherTaches();
+      }
+      
+      function supprimer(index){
+       taches.splice(index, 1);
+        sauvegarder();
+        afficherTaches();
+      }
+      function sauvegarder() {
+        localStorage.setItem('mesTaches',JSON.stringify(taches));
+      }
+
+      function afficher() {
+        let liste = document.getElementById('liste');
+        liste.innerHTML='';
+
+        tâches.forEach(function(tache, index) {
+          liste.innerHTML +='
+            <li>
+            ${tache}
+            <button class="delete" onclick="supprimerTachhe(${index})">X</button>
+            </li>
+        ';
+        } );
+      }
+    </script>
+     </body>
+  </head>
+  </html>
