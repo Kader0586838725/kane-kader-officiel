@@ -63,11 +63,11 @@
     </div>
         
     <script>
-      let tache = [];
+      let taches = [];
       window.onload = function(){
         let tacheSauvegardees =localStorage.getItem('mesTaches');
         if(tachesSauvegardees){
-          taches =JSON.parse(tachesSauvegardees);
+          taches = JSON.parse(tachesSauvegardees);
           afficherTaches();
         }
       }
@@ -79,14 +79,14 @@
           alert('Écris une tâche !');
           return;
         }
-        taches.push(textetache);
+        taches.push(textTache);
         input.value ='';
 
         sauvegarder();
         afficherTaches();
       }
       
-      function supprimer(index){
+      function supprimerTache(index){
        taches.splice(index, 1);
         sauvegarder();
         afficherTaches();
@@ -95,7 +95,7 @@
         localStorage.setItem('mesTaches',JSON.stringify(taches));
       }
 
-      function afficher() {
+      function afficherTaches() {
         let liste = document.getElementById('liste');
         liste.innerHTML='';
 
@@ -103,7 +103,7 @@
           liste.innerHTML +='
             <li>
             ${tache}
-            <button class="delete" onclick="supprimerTachhe(${index})">X</button>
+            <button class="delete" onclick="supprimerTache(${index})">X</button>
             </li>
         ';
         } );
