@@ -58,7 +58,7 @@
 
     <div class="container">
       <input type="text" id="tache" placeholder="Ex: Apprendre JavaScript">
-       <button onclick="ajouter tache()">Ajouter</button>
+       <button onclick="ajouterTache()">Ajouter</button>
 
        <ul id="liste"></ul>
     </div>
@@ -85,12 +85,12 @@
       localStorage.setItem('mesTaches', JSON.stringify(taches));
       afficherTaches();
       }
-     function supprimerTache(index){
+     function supprimerTache(index) {
       taches.splice(index, 1);
       localStorage.setItem('mesTaches', JSON.stringify(taches));
        afficherTaches();
      }
-     afficheTaches();
+     afficherTaches();
     </script>
      </body>
   </html>
