@@ -66,10 +66,10 @@
     <script>
      let taches = JSON.parse(localStorage.getItem('mesTaches')) || [];
 
-     function afficherTaches(){
+     function afficherTaches() {
       const liste = document.getElementById('liste');
-      liste.innerHTML ='';
-      taches.forEach(tache, index) {
+      liste.innerHTML = '';
+      taches.forEach(function(tache, index) {
        liste.innerHTML += `<li>${tache}<button class="delete" onclick="supprimerTache(${index})">X</Button></li>`;
       });
      }
