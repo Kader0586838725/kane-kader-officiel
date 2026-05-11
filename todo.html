@@ -64,51 +64,33 @@
     </div>
         
     <script>
-      let taches = [];
-      window.onload = function(){
-        let tacheSauvegardees =localStorage.getItem('mesTaches');
-        if(tachesSauvegardees){
-          taches = JSON.parse(tachesSauvegardees);
-          afficherTaches();
-        }
-      }
-      function ajouterTache(){
-        let input = document.getElementById('tache');
-        let textTache = input.value;
+     let taches = JSON.parse(localStorage.getItem('mesTaches')) || [];
 
-        if(textTache === ''){
-          alert('Écris une tâche !');
-          return;
-        }
-        taches.push(textTache);
-        input.value ='';
-
-        sauvegarder();
-        afficherTaches();
+     function afficherTaches(){
+      const liste = document.getElementById('liste');
+      liste.innerHTML ='';
+      taches.forEach(tache, index) {
+       liste.innerHTML += ` <li>${tache}<button class="delete" onclick="supprimerTache(${index})">X</Button></li>`;
+      });
+     }
+     function ajouterTache() {
+      const input = document.getElementById('tache');
+      const textTache = input.value.trim();
+      if (textTache === '') {
+       alert('Ecrire une tâche !');
+       return;
       }
-      
-      function supprimerTache(index){
-       taches.splice(index, 1);
-        sauvegarder();
-        afficherTaches();
+      taches.push(textTache);
+      input.value = '';
+      localStorage.stItem('mesTaches', JSON.stringify(taches));
+      afficherTaches();
       }
-      function sauvegarder() {
-        localStorage.setItem('mesTaches',JSON.stringify(taches));
-      }
-
-      function afficherTaches() {
-        let liste = document.getElementById('liste');
-        liste.innerHTML='';
-
-        tâches.forEach(function(tache, index) {
-          liste.innerHTML +='
-            <li>
-            ${tache}
-            <button class="delete" onclick="supprimerTache(${index})">X</button>
-            </li>
-        ';
-        } );
-      }
+     function supprimerTache(index){
+      taches.splice(index, 1);
+      localStorage.setItem('mesTaches', JSON.stringify('taches));
+       afficherTaches();
+     }
+     afficheTaches();
     </script>
      </body>
   </html>
